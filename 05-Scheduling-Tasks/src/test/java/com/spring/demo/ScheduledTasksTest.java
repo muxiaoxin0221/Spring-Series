@@ -1,4 +1,4 @@
-package com.spring.schedulingtasks;
+package com.spring.demo;
 
 import org.awaitility.Durations;
 import org.junit.jupiter.api.Test;

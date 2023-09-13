@@ -1,4 +1,4 @@
-package com.spring.schedulingtasks;
+package com.spring.demo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

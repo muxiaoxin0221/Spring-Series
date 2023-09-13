@@ -1,6 +1,6 @@
-package com.spring.restful.controller;
+package com.spring.demo.controller;
 
-import com.spring.restful.pojo.Greeting;
+import com.spring.demo.pojo.Greeting;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

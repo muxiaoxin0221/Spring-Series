@@ -1,4 +1,4 @@
-package com.spring.webdemo;
+package com.spring.demo;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

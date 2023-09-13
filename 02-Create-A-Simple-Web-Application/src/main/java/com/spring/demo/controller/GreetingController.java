@@ -1,4 +1,4 @@
-package com.spring.webdemo.controller;
+package com.spring.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.spring.restful.pojo;
+package com.spring.demo.pojo;
 
 public record Greeting(long id, String content) {
 }

@@ -18,29 +18,19 @@ Spring Boot可以轻松创建独立的，可一键运行的生产级Spring应用
 
 ## Hello World
 
-在DemoApplication.java中添加如下代码；
+我们创建第一个RestController来实现Spring的Hello World。
 
 ```java
-package com.spring.demo;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
 @RestController
-public class DemoApplication {
+public class HelloController {
 
   @GetMapping("/hello")
   public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
     return String.format("Hello %s!", name);
-  }
-
-  public static void main(String[] args) {
-    SpringApplication.run(DemoApplication.class, args);
   }
 
 }
@@ -54,6 +44,25 @@ public class DemoApplication {
 
 注解@ReqeustParam告诉Spring期望获取请求中一个名为name的参数值，但如果请求中没有提供该参数值，那么将默认使用"
 World"作为参数值。
+
+## 单元测试
+
+```java
+@SpringBootTest
+@AutoConfigureMockMvc
+public class HelloControllerTest {
+
+  @Autowired
+  private MockMvc mvc;
+
+  @Test
+  public void getHello() throws Exception {
+    mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().string(equalTo("Hello World!")));
+  }
+}
+```
 
 ## 运行Spring Boot
 
@@ -185,7 +194,7 @@ spring-boot-maven-plugin提供了如下maven goal。
 ```
 Spring Boot从Tomcat切换到Jetty需要将Tomcat的依赖从spring-boot-starter-web中移除，再将spring-boot-starter-jetty添加到项目的依赖中，表示开启Jetty。
 
-需要注意的是此处需要将Servlet API从6.0.0版本降低至5.0.0
+需要注意的是此处需要将Servlet API从6.0.0版本降低至5.0.0, 但又会和单元测试MockMvc所需版本不兼容。我们还是慢慢等待社区修复这个问题吧。
 ```xml
 <jakarta-servlet.version>5.0.0</jakarta-servlet.version>
 ```

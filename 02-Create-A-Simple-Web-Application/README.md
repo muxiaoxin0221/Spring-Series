@@ -181,14 +181,14 @@ login.html的主体代码如下：
 ## 运行结果
 
 访问localhost:8080/或localhost:8080。
-![img1.png](img1.png)
+![img1.png](./img/img1.png)
 
 访问localhost:8080/greeting会被直接重定向到login页面
-![img2.png](img2.png)
+![img2.png](img/img2.png)
 
 登录成功后会返回你在登入之前访问的页面。
 
 如果是从home页面跳转到login页面则返回home，如果是从greeting页面跳转到login则返回greeting。
-![img.png3](img3.png)
+![img.png3](img/img3.png)
 
 对于错误的用户信息输入，已经logout可自行验证。

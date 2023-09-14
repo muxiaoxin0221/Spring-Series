@@ -13,7 +13,7 @@
 }
 ```
 
-定义消费侧的资源类Greeting
+定义消费侧的资源类Greeting。
 
 ```java
 @JsonIgnoreProperties(ignoreUnknown = true)

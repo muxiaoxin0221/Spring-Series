@@ -7,8 +7,8 @@ Spring Boot可以轻松创建独立的，可一键运行的生产级Spring应用
 
 ## 准备工作
 
-1. IDE: Intellij IDEA, Visual Studio Code, Spring Tools
-2. JDK: Spring官方推荐 BellSoft Liberica JDK 17
+1. IDE: Intellij IDEA, Visual Studio Code, Spring Tools。
+2. JDK: Spring官方推荐 BellSoft Liberica JDK 17。
 
 ## 初始化Spring Boot项目
 
@@ -148,7 +148,7 @@ spring-boot-starter-parent继承自spring-boot-dependencies。
 </dependency>
 ```
 
-spring-boot-starter-web依赖开启了项目的web功能
+spring-boot-starter-web依赖开启了项目的web功能。
 
 ```xml
 <dependency>
@@ -157,7 +157,7 @@ spring-boot-starter-web依赖开启了项目的web功能
 </dependency>
 ```
 
-spring-boot-starter-test依赖包含了测试需要的库
+spring-boot-starter-test依赖包含了测试需要的库。
 
 ```xml
 <dependency>
@@ -198,6 +198,6 @@ Spring Boot从Tomcat切换到Jetty需要将Tomcat的依赖从spring-boot-starter
 ```xml
 <jakarta-servlet.version>5.0.0</jakarta-servlet.version>
 ```
-在pom中修改servlet的版本号从而覆盖spring-boot-dependencies中的6.0.0版本。这一问题在下面的链接中有所说明
+在pom中修改servlet的版本号从而覆盖spring-boot-dependencies中的6.0.0版本。这一问题在下面的链接中有所说明。
 
-https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0.0-RC2-Release-Notes#jetty
+> https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0.0-RC2-Release-Notes#jetty

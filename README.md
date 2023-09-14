@@ -5,3 +5,4 @@
 3. [Building A RESTful Web Service](./03-Building-A-RESTful-Web-Service/README.md)
 4. [Consuming A RESTful Web Service](./04-Consuming-A-RESTful-Web-Service/README.md)
 5. [Scheduling Tasks](./05-Scheduling-Tasks/README.md)
+6. [Accessing Relational Data Using JDBC](./06-Accessing-Relational-Data-Using-JDBC/README.md)

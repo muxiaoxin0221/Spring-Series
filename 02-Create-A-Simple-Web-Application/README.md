@@ -120,7 +120,7 @@ hello页面和greeting页面功能类似。hello中的name值会从login的表�
 </dependency>
 ```
 
-WebSecurityConfig会确保只有授权的用户可以访问到greeting页面
+WebSecurityConfig会确保只有授权的用户可以访问到greeting页面。
 ```java
 @Configuration
 @EnableWebSecurity
@@ -183,7 +183,7 @@ login.html的主体代码如下：
 访问localhost:8080/或localhost:8080。
 ![img1.png](./img/img1.png)
 
-访问localhost:8080/greeting会被直接重定向到login页面
+访问localhost:8080/greeting会被直接重定向到login页面。
 ![img2.png](img/img2.png)
 
 登录成功后会返回你在登入之前访问的页面。

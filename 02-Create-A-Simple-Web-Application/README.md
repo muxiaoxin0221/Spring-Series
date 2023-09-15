@@ -178,6 +178,61 @@ login.html的主体代码如下：
 </body>
 ```
 
+## 使用LDAP认证用户信息
+
+上一节我们将用户的验证信息存放在内存中。本节我们使用Spring LDAF通过LDIF文件验证用户信息。
+```xml
+<dependency>
+  <groupId>org.springframework.ldap</groupId>
+  <artifactId>spring-ldap-core</artifactId>
+</dependency>
+<dependency>
+<groupId>org.springframework.security</groupId>
+  <artifactId>spring-security-ldap</artifactId>
+  </dependency>
+<dependency>
+  <groupId>com.unboundid</groupId>
+  <artifactId>unboundid-ldapsdk</artifactId>
+</dependency>
+```
+
+```java
+  @Autowired
+  public void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth
+        .ldapAuthentication()
+        .userDnPatterns("uid={0},ou=people")
+        .groupSearchBase("ou=groups")
+        .contextSource()
+        .url("ldap://localhost:8389/dc=springframework,dc=org")
+        .and()
+        .passwordCompare()
+        .passwordEncoder(new BCryptPasswordEncoder())
+        .passwordAttribute("userPassword");
+  }
+```
+用LDAP 配置方式取代上一节中的userDetailsService()。
+
+```xml
+spring.ldap.embedded.ldif=classpath:test-server.ldif
+spring.ldap.embedded.base-dn=dc=springframework,dc=org
+spring.ldap.embedded.port=8389
+```
+相应的配置LDAP服务器信息，Spring Boot内置了LDAP服务器。
+
+```xml
+dn: uid=ben,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Ben Alex
+sn: Alex
+uid: ben
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+```
+我们采用了BCryptPasswordEncoder加密方式，这里ben的密码对应的是benspassword。
+
 ## 运行结果
 
 访问localhost:8080/或localhost:8080。

@@ -6,3 +6,5 @@
 4. [Consuming A RESTful Web Service](./04-Consuming-A-RESTful-Web-Service/README.md)
 5. [Scheduling Tasks](./05-Scheduling-Tasks/README.md)
 6. [Accessing Relational Data Using JDBC](./06-Accessing-Relational-Data-Using-JDBC/README.md)
+7. [Uploading Files](./07-Uploading-Files/README.md)
+8. [Messaging With Redis](./08-Messaging-With-Redis/README.md)

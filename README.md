@@ -8,3 +8,5 @@
 6. [Accessing Relational Data Using JDBC](./06-Accessing-Relational-Data-Using-JDBC/README.md)
 7. [Uploading Files](./07-Uploading-Files/README.md)
 8. [Messaging With Redis](./08-Messaging-With-Redis/README.md)
+9. [Messaging With RabbitMQ](./09-Messaging-With-RabbitMQ/README.md)
+10. [Validating Form Input](./10-Validating-Form-Input/README.md)
